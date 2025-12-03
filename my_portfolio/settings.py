@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-(*^7ws6b&5g4^8c=l2+gfhftvzagr$+0&u$&)&s4p#pus6uv((
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ourportfolio-i4pj.onrender.com', 
+ALLOWED_HOSTS = [
+    'ourportfolio-i4pj.onrender.com', 
     '127.0.0.1',
 ]
 
