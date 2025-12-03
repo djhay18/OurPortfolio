@@ -1,0 +1,208 @@
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #99d4f0;
+    color: #1d1c1c;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header {
+    background-color: #0c1820;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.title {
+    font-size: 1.2rem;
+    color: #bbb;
+}
+
+section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.project-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.project {
+    background-color: #f3e2e2;
+    padding: 20px;
+    margin: 15px;
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.project-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.project-link:hover {
+    color: #3498db;
+}
+
+.contact a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Parungo & Rizalino - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="profile">
+                <img src="profile-pic.jpg" alt="Your Photo" class="profile-img">
+                <h1>Hi we are Castillo & Parungo</h1>
+                <p class="title">Web Developer / Designer</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Hi, We're from Section BT 2-103 at STI Sta.Maria </p>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>React, Node.js</li>
+                <li>Responsive Web Design</li>
+                <li>Version Control (Git & GitHub)</li>
+                <li>UI/UX Design</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-list">
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <p>Game Developing</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <p>Web Devoloping</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project">
+                    <h3>Project 3</h3>
+                    <p>App Developing</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+    <div class="container">
+        <h2>Contact</h2>
+
+        {% if success %}
+            <p style="color: green;">Your message was sent successfully!</p>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name</p>
+        </div>
+    </footer>
+
+</body>
+</html>
